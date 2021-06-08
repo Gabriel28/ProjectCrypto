@@ -4,7 +4,6 @@
 pragma solidity ^0.8.4;
 
 contract Basic {
-    string public text;
     uint256 public number;
     address public userAddress;
     bool public answer;
@@ -13,12 +12,6 @@ contract Basic {
     */
     mapping(address => uint) public hasInteracted;
     mapping(address => uint) public balances;
-
-    function setText(string memory myText) public {
-        text = myText;
-        interactedContract();
-    }
-
     /*
         On a measuring scale 1 ether is equivalent to 1 quintillion WEIS
         I work with decimals with the smallest scales: EJ 1.5 Ether = 1 quintillion WEIS 
@@ -67,19 +60,7 @@ contract Basic {
         View can query blockchain values, but don't change values.
         Any onther types can consult and change blockchain values.
     */
-    function sum(uint256 num1, uint256 num2) public pure returns (uint256) {
-        return num1 + num2;
-    }
-
     function sub(uint256 num1, uint256 num2) public pure returns (uint256) {
         return num1 - num2;
-    }
-
-    function div(uint256 num1, uint256 num2) public pure returns (uint256) {
-        return num1 / num2;
-    }
-
-    function mult(uint256 num1, uint256 num2) public pure returns (uint256) {
-        return num1 * num2;
     }
 }
